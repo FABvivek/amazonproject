@@ -38,7 +38,7 @@ products.forEach((product)=>{
               <option value="10">10</option>
             </select>
           </div>
-
+ 
           <div class="product-spacer"></div>
 
           <div class="added-to-cart">
@@ -79,8 +79,15 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
             quantity : 1
           });
         }
+
+        let cartQuantity = 0;
+        cart.forEach((item) => {
+          cartQuantity += item.quantity;
+        });
+
+        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
       
-      
+      console.log(cartQuantity);
       console.log(cart);
     });
 });
